@@ -1,6 +1,6 @@
 .container {
 	width: 100%; 
-	max-width: 1200px;
+	max-width: 1024px;
 }
 p {
 	color: red;
@@ -20,7 +20,7 @@ button {
 	display: table-cell;
 	vertical-align: middle;
 	height: 140px;
-	width: 1200px;
+	width: 1024px;
 }
 
 .topHeader {
@@ -80,4 +80,33 @@ button {
 .banner h2 {
 	padding: 20px 0;
 	text-align: center;
+}
+
+/*video section styles*/
+
+.video { 
+	display: table-cell;
+	height: 400px;
+	width: 1024px;
+	background-color: pink;
+	vertical-align: middle;
+}
+
+.video img {
+	width: 300px;
+	height: 300px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 40px;
+}
+
+.videoText {
+	display: inline-block;
+	margin-left: 70px;
+	vertical-align: top;
+	width: 500px;
+}
+
+.videoText p {
+	margin-top: 0;
 }
