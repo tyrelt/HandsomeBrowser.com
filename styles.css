@@ -1,13 +1,42 @@
-<style>
-	body { 
-		max-width: 600px;
-		background-color: orange;
-	}
-	.banner {
-		background-color: blue;
-		height: 60px;
-	}
-	p {
-		color: red;
-	}
-</style>
+.container {
+	width: 100%; 
+	max-width: 1200px;
+}
+.banner {
+	background-color: blue;
+	height: 60px;
+}
+p {
+	color: red;
+}
+
+/*Top header styles*/
+.topHeaderContainer {
+	background-color: brown;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	height: 140px;
+	width: 1200px;
+}
+
+.topHeader {
+	display: inline-block;
+	background-color: green;
+	height: 70px;
+	width: 100%;
+	border-top: 2px solid blue;
+	border-bottom: 2px solid blue;
+}
+
+.topHeader h1 { 
+	color: white;
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.topHeader img { 
+	display: inline-block;
+	margin-left: 20px;
+	height: 45px;
+}
