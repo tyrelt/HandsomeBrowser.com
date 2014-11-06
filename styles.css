@@ -1,0 +1,13 @@
+<style>
+	body { 
+		max-width: 600px;
+		background-color: orange;
+	}
+	.banner {
+		background-color: blue;
+		height: 60px;
+	}
+	p {
+		color: red;
+	}
+</style>
