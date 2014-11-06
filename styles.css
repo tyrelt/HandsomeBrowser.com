@@ -2,12 +2,16 @@
 	width: 100%; 
 	max-width: 1200px;
 }
-.banner {
-	background-color: blue;
-	height: 60px;
-}
 p {
 	color: red;
+}
+/*General styles*/
+button {
+	padding: 15px 30px;
+	background-color: green;
+	color: white;
+	border: 0;
+	font-size: 1.5em;
 }
 
 /*Top header styles*/
@@ -15,7 +19,6 @@ p {
 	background-color: brown;
 	display: table-cell;
 	vertical-align: middle;
-	text-align: center;
 	height: 140px;
 	width: 1200px;
 }
@@ -23,20 +26,58 @@ p {
 .topHeader {
 	display: inline-block;
 	background-color: green;
-	height: 70px;
 	width: 100%;
 	border-top: 2px solid blue;
 	border-bottom: 2px solid blue;
+	height: 90px;
 }
 
 .topHeader h1 { 
 	color: white;
 	display: inline-block;
+	vertical-align: middle;
 	margin-left: 20px;
+	position: relative;
+	top: -15px;
 }
 
 .topHeader img { 
+	position: relative;
+	top: -15px;
 	display: inline-block;
+	vertical-align: middle;
 	margin-left: 20px;
-	height: 45px;
+	height: 120px;
+	border: 2px solid blue;
+}
+
+/*hero styles*/
+
+.hero { 
+	background: url("images/masculineImage.jpg") center no-repeat;
+	height: 600px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.heroChild { 
+	width: 60%;
+	margin: 0 auto;
+}
+
+.heroChild p {
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+/*banner*/
+
+.banner {
+	overflow: hidden;
+	background-color: blue;
+}
+
+.banner h2 {
+	padding: 20px 0;
+	text-align: center;
 }
