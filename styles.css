@@ -1,45 +1,59 @@
+/*
+Maroon:	330000
+Brown:	331b00
+Navy:	000033
+Green:	003300
+Plum:	220033
+Tan:	DDBB88
+Camel:	663300
+*/
+
+
 .container {
 	width: 100%; 
 	max-width: 1024px;
+	min-width: 1024px;
 	margin: 0 auto;
 }
 p {
-	color: red;
+	line-height: 1.7em;
+	font-size: 1.4em;
 }
 /*General styles*/
 button {
-	padding: 15px 30px;
-	background-color: green;
+	padding: 15px 32px;
+	background-color: #003300;
 	color: white;
 	border: 0;
-	font-size: 1.5em;
+	font-size: 1.7em;
 }
 
 /*Top header styles*/
 .topHeaderContainer {
-	background-color: brown;
+	background-color: #331b00;
 	display: table-cell;
 	vertical-align: middle;
-	height: 140px;
+	height: 200px;
 	width: 1024px;
 }
 
 .topHeader {
 	display: inline-block;
-	background-color: green;
+	background-color: black;
 	width: 100%;
-	border-top: 2px solid blue;
-	border-bottom: 2px solid blue;
+	border-top: 3px solid #DDBB88;
+	border-bottom: 3px solid #DDBB88;
 	height: 90px;
 }
 
 .topHeader h1 { 
-	color: white;
+	color: #DDBB88;
 	display: inline-block;
 	vertical-align: middle;
-	margin-left: 20px;
+	margin-left: 40px;
 	position: relative;
 	top: -15px;
+	font-size: 3em;
 }
 
 .topHeader img { 
@@ -47,9 +61,9 @@ button {
 	top: -15px;
 	display: inline-block;
 	vertical-align: middle;
-	margin-left: 20px;
+	margin-left: 60px;
 	height: 120px;
-	border: 2px solid blue;
+	border: 2px solid #DDBB88;
 }
 
 /*hero styles*/
@@ -75,12 +89,13 @@ button {
 
 .banner {
 	overflow: hidden;
-	background-color: blue;
+	background-color: black;
 }
 
 .banner h2 {
-	padding: 20px 0;
 	text-align: center;
+	color: white;
+	font-size: 2.5em;
 }
 
 /*video section styles*/
@@ -89,7 +104,7 @@ button {
 	display: table-cell;
 	height: 400px;
 	width: 1024px;
-	background-color: pink;
+	background-color: #331b00;
 	vertical-align: middle;
 }
 
@@ -99,6 +114,7 @@ button {
 	display: inline-block;
 	vertical-align: middle;
 	margin-left: 40px;
+	margin-top: 40px;
 }
 
 .videoText {
@@ -106,8 +122,51 @@ button {
 	margin-left: 70px;
 	vertical-align: top;
 	width: 500px;
+	margin-top: 40px;
 }
 
 .videoText p {
+	color: white;
 	margin-top: 0;
 }
+
+/*Three-column section styles*/
+.threeColumn {
+	width: 100%;
+	text-align: center;
+}
+
+.threeColumnChild {
+	margin: 40px 10px;
+	width: 30%;
+	display: inline-block;
+}
+
+.threeColumnChild img { 
+	width: 100px;
+	height: 150px;
+}
+
+.threeColumnChild p { 
+	text-align: left;
+}
+/*main CTA styles*/
+.mainCTA { 
+	height: 500px;
+	background-color: purple;
+	text-align: center;
+}
+
+.mainCTAChild {
+	text-align: center;
+	max-width: 45%;
+	margin: 0 auto;
+}
+
+.mainCTAChild h2{
+	padding-top: 170px;
+}
+
+.mainCTAChild button {
+	margin-top: 50px;
+} 
