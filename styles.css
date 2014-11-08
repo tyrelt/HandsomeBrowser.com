@@ -18,24 +18,39 @@ Camel:	663300
 
 /*General styles*/
 p {
-	line-height: 1.5em;
+	line-height: 1.6em;
 	font-size: 1.4em;
+	font-family: 'Istok Web', sans-serif;
+	margin-bottom: 1.5em;
 }
+
+h1 { 
+	font-family: 'Libre Baskerville', serif;
+}
+
 h2 { 
 	font-size: 2.5em;
+	font-family: 'Libre Baskerville', serif;
 }
 
 h3 { 
 	font-size: 1.7em;
+	font-family: 'Libre Baskerville', serif;
 }
 
 button {
 	padding: 15px 32px;
 	background-color: #003300;
 	color: white;
-	border: 0;
+	border: 3px solid white;
 	font-size: 1.7em;
 }
+button:hover {
+	cursor: pointer;
+	border: 3px solid #225522;
+	background-color: #225522;
+}
+
 
 /*background colors*/
 
