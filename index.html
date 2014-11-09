@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Handsome Browser</title>
 	<link rel="stylesheet" href="styles.css" type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Istok+Web:400,700,400italic' rel='stylesheet' type='text/css'>	
 	
 	<!-- Config for inline install -->
 
@@ -11,19 +12,6 @@
 
 	<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jcdmhbmmmobklbdndbpebmfkgnnjgjld">
 
-	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Istok+Web:400,700,400italic' rel='stylesheet' type='text/css'>
-
-	<script>
-		var installHB = function() {
-			chrome.webstore.install('', 
-				function(success) {
-					console.log('install successful!');
-				}, function(err) {
-					console.log(err);
-				});
-		};
-	</script>
-	
 	<!-- End install config -->
 
 </head>
@@ -42,7 +30,7 @@
 			<h1>Lorem ipsum dolor sit amet.</h1>
 			<div class="heroChild">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, deleniti libero quibusdam, sint ex aspernatur repellendus ipsam dicta et voluptate id incidunt unde. Porro natus eius quae incidunt dolorum vel deserunt vitae illum, odit ut dicta corrupti debitis voluptatum hic excepturi quaerat dolor aperiam sint obcaecati exercitationem placeat. Dolore delectus officiis a, tenetur voluptatibus! Repellat soluta molestias quo obcaecati, alias nostrum, sed. Officiis ab unde, reiciendis laudantium, temporibus neque excepturi!</p>
-				<button onclick="installHB()">Get it now</button>
+				<button class="install">Get it now</button>
 			</div>
 		</div>
 		<!-- banner -->
@@ -82,13 +70,13 @@
 				<h3>CUMQUE</h3>
 				<p>Totam, facilis ut repudiandae deleniti, saepe aut eveniet reprehenderit maiores et ipsam explicabo accusamus minima!</p>
 			</div>
-			<button onclick="installHB()">Get it now</button>
+			<button class="install">Get it now</button>
 		</div>
 		<!-- main CTA section -->
 		<div class="mainCTA maroon">
 			<div class="mainCTAChild">
 				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
-				<button onclick="installHB()">Get it now</button>
+				<button class="install">Get it now</button>
 			</div>
 		</div>
 		<!-- banner -->
@@ -122,7 +110,7 @@
 			<div class="mainCTAChild">
 				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ipsa impedit labore, dolor magni omnis nesciunt similique.</p>
-				<button onclick="installHB()">Get it now</button>
+				<button class="install">Get it now</button>
 			</div>
 		</div>
 		<!-- banner -->
@@ -141,9 +129,36 @@
 		<div class="mainCTA brown">
 			<div class="mainCTAChild">
 				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
-				<button onclick="installHB()">Get it now</button>
+				<button class="install">Get it now</button>
 			</div>
 		</div>
 	</div>
+	<script>
+
+		var installHB,
+			installButtons,
+			i;
+		
+		installHB = function() {
+			chrome.webstore.install('', 
+				function(success) {
+					console.log('install successful!');
+				}, function(err) {
+					console.log(err);
+				});
+		};
+
+		installButtons = document.getElementsByClassName('install');
+		for (i = 0; i < installButtons.length; i++) {
+			if (document.addEventListener) {
+				installButtons[i].addEventListener('click', installHB, false);
+			} else if (document.attachEvent) {
+				installButtons[i].attachEvent('onclick', installHB);
+			} else {
+				installButtons[i].onclick = installHB;
+			}
+		}
+
+	</script>
 </body>
 </html>
