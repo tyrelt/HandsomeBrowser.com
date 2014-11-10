@@ -140,6 +140,18 @@
 			i;
 		
 		installHB = function() {
+
+			// Fail early if the Chrome installer isn't available
+			if (typeof chrome === 'undefined') {
+				alert('Looks like you\'re not using Google Chrome.\n' +
+					'Install it right now--we\'ll see you in a sec!' +
+					'\n\n' +
+					'https://www.google.com/chrome/browser/'
+				);
+				window.open('https://www.google.com/chrome/browser/');
+				return;
+			}
+
 			chrome.webstore.install('', 
 				function(success) {
 					console.log('install successful!');
