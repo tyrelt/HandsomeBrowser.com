@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Handsome Browser | The Internet for men</title>
 	<link rel="stylesheet" href="styles.css" type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Istok+Web:400,700,400italic' rel='stylesheet' type='text/css'>	
 	
 	<!-- Config for inline install -->
 
@@ -11,19 +12,6 @@
 
 	<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/jcdmhbmmmobklbdndbpebmfkgnnjgjld">
 
-	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Istok+Web:400,700,400italic' rel='stylesheet' type='text/css'>
-
-	<script>
-		var installHB = function() {
-			chrome.webstore.install('', 
-				function(success) {
-					console.log('install successful!');
-				}, function(err) {
-					console.log(err);
-				});
-		};
-	</script>
-	
 	<!-- End install config -->
 
 </head>
@@ -45,7 +33,8 @@
 				<p><strong>The Internet was created so serious men could get stuff done. Now it’s full of politically correct, pussyfooting nonsense. That’s not our grandfathers’ Internet, and it doesn’t have to be ours.</strong></p>
 				<p><strong>It's time for the men of the Internet to live again. It's time for the Handsome Browser.</strong></p>
 				<br />
-				<button onclick="installHB()">Get it now</button>
+				<button class="install">Get it now</button>
+
 			</div>
 		</div>
 		<!-- banner -->
@@ -87,15 +76,18 @@
 				<h3>No frailty</h3>
 				<p>If you like frilly Web doilies and getting butthurt, don't waste your time.</p>
 			</div>
-			<button onclick="installHB()">Get it now</button>
+			<button class="install">Get it now</button>
 		</div>
 		<!-- main CTA section -->
 		<div class="mainCTA maroon">
 			<div class="mainCTAChild">
+
 				<h2>Install in 30 seconds.
 				<br />
 				Enjoy the Internet forever.</h2>
-				<button onclick="installHB()">Get it now</button>
+				
+				<button class="install">Get it now</button>
+
 			</div>
 		</div>
 		<!-- banner -->
@@ -114,7 +106,7 @@
 			<img src="images/francis-drake.png" alt="">
 			<div class="endorsementText left">
 				<h3>Francis Drake</h3>
-				<p>Admiral, pirate, adventurer, second man to sail around the world. He had a $6.5 million bounty on his head, and still lived to the ripe old age of 55. His last words? "Suck it, Spain." Isn't it time we men felt a little <i>El Draque</i> in us when we use the Web?</p>
+				<p>Admiral, pirate, adventurer, second man to sail around the world. He had a $6.5 million bounty on his head, and still lived to the ripe old age of 55. His last words? "Suck it, Spain." Isn't it time we men felt a little <em>El Draque</em> in us when we use the Web?</p>
 			</div>
 		</div>
 		<div class="endorsement maroon">
@@ -129,7 +121,9 @@
 			<div class="mainCTAChild">
 				<h2>For men and men alone</h2>
 				<p>Honestly, we would be surprised if any women enjoyed it. This is a breakthrough for men. It makes the Internet a more comfortable place for those of us who don’t love shoe shopping and tea parties. Anyone can download it, but men are far more likely to appreciate it.</p>
-				<button onclick="installHB()">Get it now</button>
+				
+				<button class="install">Get it now</button>
+
 			</div>
 		</div>
 		<!-- banner -->
@@ -152,7 +146,7 @@
 			<p>Why didn’t we create an Internet for women? Because we’re not women, and we don’t presume to know what women want to experience online. But the world is brimming with top-notch female coders, dreamers, and Web designers. We are confident that a feminine counterpart to the Handsome Browser will arrive someday soon.</p>
 			<p>But this isn’t about women. This is about the marginalized men of the Internet. This is about the men who wonder if masculinity means anything in the Information Age. Yes, gentlemen, it does. And the Handsome Browser is here to prove it. This new Internet is already teeming with good-natured, hard-working, masculine life—and you can join it right now. It’s a way for men to use the Web in a way that recognizes us for what we are:</p>
 			<p>Brothers.</p>
-			<p style="font-size: 10px;"><i>Special thanks to <a href="http://www.gwpda.org/photos/coppermine/displayimage.php?pos=-1267">Photos of the Great War</a> for the airship photo.</i></p>
+			<p style="font-size: 10pt;"><em>Special thanks to <a href="http://www.gwpda.org/photos/coppermine/displayimage.php?pos=-1267">Photos of the Great War</a> for the airship photo.</em></p>
 
 
 		</div>
@@ -161,9 +155,49 @@
 			<div class="mainCTAChild">
 				<h2>Welcome home, gentlemen</h2>
 				<p>You have put up with frilly browsers long enough. It’s time to experience the Web the way God, honor, and natural law intended us to.</p>
-				<button onclick="installHB()">Get it now</button>
+				
+				<button class="install">Get it now</button>
 			</div>
 		</div>
 	</div>
+	<script>
+
+		var installHB,
+			installButtons,
+			i;
+		
+		installHB = function() {
+
+			// Fail early if the Chrome installer isn't available
+			if (typeof chrome === 'undefined') {
+				alert('Looks like you\'re not using Google Chrome.\n' +
+					'Install it right now--we\'ll see you in a sec!' +
+					'\n\n' +
+					'https://www.google.com/chrome/browser/'
+				);
+				window.open('https://www.google.com/chrome/browser/');
+				return;
+			}
+
+			chrome.webstore.install('', 
+				function(success) {
+					console.log('install successful!');
+				}, function(err) {
+					console.log(err);
+				});
+		};
+
+		installButtons = document.getElementsByClassName('install');
+		for (i = 0; i < installButtons.length; i++) {
+			if (document.addEventListener) {
+				installButtons[i].addEventListener('click', installHB, false);
+			} else if (document.attachEvent) {
+				installButtons[i].attachEvent('onclick', installHB);
+			} else {
+				installButtons[i].onclick = installHB;
+			}
+		}
+
+	</script>
 </body>
 </html>
